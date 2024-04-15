@@ -69,7 +69,9 @@ function formatDate(date) {
   return fullDate;
 }
 
-search(Lakeland);
+
 
 let searchCity = document.querySelector("#search-form");
 searchCity.addEventListener("submit", search);
+
+search(Lakeland);
