@@ -21,14 +21,16 @@ function getTemp(response) {
 
   let wind = document.querySelector("#wind");
   wind.innerHTML = `${newWind} km/h`;
+
+  let cityElement = document.querySelector("#current-city");
+  cityElement.innerHTML = response.data.city;
 }
 
 function search(event) {
   event.preventDefault();
   let searchInputElement = document.querySelector("#search-input");
-  let cityElement = document.querySelector("#current-city");
   let city = searchInputElement.value;
-  cityElement.innerHTML = city;
+  
 
   let currentDateELement = document.querySelector("#current-date");
   let currentDate = new Date();
