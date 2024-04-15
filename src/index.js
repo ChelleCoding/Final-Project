@@ -21,16 +21,14 @@ function getTemp(response) {
 
   let wind = document.querySelector("#wind");
   wind.innerHTML = `${newWind} km/h`;
-
-  let cityElement = document.querySelector("#current-city");
-  cityElement.innerHTML = response.data.city;
 }
 
 function search(event) {
   event.preventDefault();
   let searchInputElement = document.querySelector("#search-input");
+  let cityElement = document.querySelector("#current-city");
   let city = searchInputElement.value;
-  
+  cityElement.innerHTML = city;
 
   let currentDateELement = document.querySelector("#current-date");
   let currentDate = new Date();
@@ -50,10 +48,12 @@ function formatDate(date) {
 
   if (minutes < 10) {
     minutes = `0${minutes}`;
+    console.log(minutes);
   }
 
   if (hours < 10) {
     hours = `0${hours}`;
+    console.log(hours);
   }
 
   let days = [
@@ -74,4 +74,3 @@ function formatDate(date) {
 let searchCity = document.querySelector("#search-form");
 searchCity.addEventListener("submit", search);
 
-search("Lakeland");
