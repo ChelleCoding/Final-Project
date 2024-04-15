@@ -75,4 +75,4 @@ let searchCity = document.querySelector("#search-form");
 searchCity.addEventListener("submit", search);
 
 
-search("Lakeland");
+//search("Lakeland");
