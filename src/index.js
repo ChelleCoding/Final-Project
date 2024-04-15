@@ -1,18 +1,15 @@
 function getTemp(response) {
   let temperature = Math.round(response.data.temperature.current);
   let newCondition = response.data.condition.description;
-  //let newIcon = response.data.condition.icon_url;
-  //console.log(newIcon);
+  
+
   let newHumidity = response.data.temperature.humidity;
   let newWind = response.data.wind.speed;
 
   let tempValue = document.querySelector("#current-temperature-value");
   tempValue.innerHTML = (temperature * 9) / 5 + 32;
 
-  //COME BACK TO ICON
-  //let currentIcon = document.querySelector("#current-temperature-icon");
-  //currentIcon.innerHTML = "<img src='${newIcon}";
-
+ 
   let Condition = document.querySelector("#condition");
   Condition.innerHTML = newCondition;
 
@@ -37,8 +34,8 @@ function search(event) {
 
   let apiKey = "e0e116f3440f7e76eb34tfo465e544a7";
   let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-  //console.log(apiURL);
-  axios.get(apiURL).then(getTemp);
+
+    axios.get(apiURL).then(getTemp);
 }
 
 function formatDate(date) {
