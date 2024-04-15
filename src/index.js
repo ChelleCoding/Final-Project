@@ -18,20 +18,21 @@ function getTemp(response) {
   let wind = document.querySelector("#wind");
   wind.innerHTML = `${newWind} km/h`;
 
+   let searchInputElement = document.querySelector("#search-input");
+   let cityElement = document.querySelector("#current-city");
+   let city = searchInputElement.value;
+   cityElement.innerHTML = response.data.city;
+
+   let currentDateELement = document.querySelector("#current-date");
+   let currentDate = new Date();
+
+ currentDateELement.innerHTML = formatDate(currentDate);
 
 }
 
 function search(event) {
   event.preventDefault();
-  let searchInputElement = document.querySelector("#search-input");
-  let cityElement = document.querySelector("#current-city");
-  let city = searchInputElement.value;
-  cityElement.innerHTML = city;
 
-  let currentDateELement = document.querySelector("#current-date");
-  let currentDate = new Date();
-
-  currentDateELement.innerHTML = formatDate(currentDate);
 
   let apiKey = "e0e116f3440f7e76eb34tfo465e544a7";
   let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
