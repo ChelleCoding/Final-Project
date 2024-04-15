@@ -72,7 +72,7 @@ function formatDate(date) {
 
 
 let searchCity = document.querySelector("#search-form");
-search("Lakeland");
 searchCity.addEventListener("submit", search);
 
 
+search("Lakeland");
