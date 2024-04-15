@@ -28,11 +28,11 @@ currentDateELement.innerHTML = formatDate(currentDate);
 
 }
 
-function search(event) {
+function search(city) {
   event.preventDefault();
 
-  let searchInputElement = document.querySelector("#search-input");
-  let city = searchInputElement.value;
+  //let searchInputElement = document.querySelector("#search-input");
+  //let city = searchInputElement.value;
 
 
   let apiKey = "e0e116f3440f7e76eb34tfo465e544a7";
