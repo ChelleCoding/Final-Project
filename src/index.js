@@ -1,10 +1,9 @@
 function getTemp(response) {
   let temperature = Math.round(response.data.temperature.current);
   let newCondition = response.data.condition.description;
-  
-
   let newHumidity = response.data.temperature.humidity;
   let newWind = response.data.wind.speed;
+
 
   let tempValue = document.querySelector("#current-temperature-value");
   tempValue.innerHTML = (temperature * 9) / 5 + 32;
@@ -18,6 +17,8 @@ function getTemp(response) {
 
   let wind = document.querySelector("#wind");
   wind.innerHTML = `${newWind} km/h`;
+
+
 }
 
 function search(event) {
