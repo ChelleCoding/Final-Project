@@ -18,20 +18,21 @@ function getTemp(response) {
   let wind = document.querySelector("#wind");
   wind.innerHTML = `${newWind} km/h`;
 
-   let searchInputElement = document.querySelector("#search-input");
-   let cityElement = document.querySelector("#current-city");
-   let city = searchInputElement.value;
-   cityElement.innerHTML = response.data.city;
+  let cityElement = document.querySelector("#current-city");
+  cityElement.innerHTML = response.data.city;
 
-   let currentDateELement = document.querySelector("#current-date");
-   let currentDate = new Date();
+  let currentDateELement = document.querySelector("#current-date");
+  let currentDate = new Date();
 
- currentDateELement.innerHTML = formatDate(currentDate);
+currentDateELement.innerHTML = formatDate(currentDate);
 
 }
 
 function search(event) {
   event.preventDefault();
+
+  let searchInputElement = document.querySelector("#search-input");
+  let city = searchInputElement.value;
 
 
   let apiKey = "e0e116f3440f7e76eb34tfo465e544a7";
