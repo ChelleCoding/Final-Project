@@ -1,13 +1,24 @@
-function getTemp(response) {
+function updateTEMP(response) {
+  
+  let searchInputElement = document.querySelector("#search-input");
+  let cityElement = document.querySelector("#current-city");
+    cityElement.innerHTML = response.data.city;
+
+  let currentDateELement = document.querySelector("#current-date");
+  let currentDate = new Date();
+
+  currentDateELement.innerHTML = formatDate(currentDate);
+  
   let temperature = Math.round(response.data.temperature.current);
   let newCondition = response.data.condition.description;
-  //let newIcon = response.data.condition.icon_url;
+  //let newIcon = `<img src="${response.data.condition.icon_url}";
   //console.log(newIcon);
   let newHumidity = response.data.temperature.humidity;
   let newWind = response.data.wind.speed;
 
   let tempValue = document.querySelector("#current-temperature-value");
-  tempValue.innerHTML = (temperature * 9) / 5 + 32;
+  let convertedTemp = (temperature * 9) / 5 + 32
+  tempValue.innerHTML = `${convertedTemp} °F`;
 
   //COME BACK TO ICON
   //let currentIcon = document.querySelector("#current-temperature-icon");
@@ -21,24 +32,20 @@ function getTemp(response) {
 
   let wind = document.querySelector("#wind");
   wind.innerHTML = `${newWind} km/h`;
+
+
 }
 
-function search(event) {
+
+function pullAPI(event){
   event.preventDefault();
+  //console.log(event);
   let searchInputElement = document.querySelector("#search-input");
-  let cityElement = document.querySelector("#current-city");
-  let city = searchInputElement.value;
-  cityElement.innerHTML = city;
-
-  let currentDateELement = document.querySelector("#current-date");
-  let currentDate = new Date();
-
-  currentDateELement.innerHTML = formatDate(currentDate);
-
+  let city = searchInputElement.value;  
   let apiKey = "e0e116f3440f7e76eb34tfo465e544a7";
   let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   //console.log(apiURL);
-  axios.get(apiURL).then(getTemp);
+  axios.get(apiURL).then(updateTEMP);
 }
 
 function formatDate(date) {
@@ -71,6 +78,7 @@ function formatDate(date) {
   return fullDate;
 }
 
-let searchCity = document.querySelector("#search-form");
-searchCity.addEventListener("submit", search);
+let getCity = document.querySelector("#search-form");
+getCity.addEventListener("submit", pullAPI);
+
 
