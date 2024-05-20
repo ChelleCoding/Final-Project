@@ -108,7 +108,10 @@ margin-bottom: 10px;
   line-height: 24px;
 }
 
-
+.current-date {
+  color:crimson;
+  font-weight: bolder;
+}
 .current-temperature-icon {
   position: relative;
   width: 10px;
