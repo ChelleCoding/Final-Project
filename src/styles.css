@@ -57,20 +57,32 @@ main {
 }
 
 .weather-forecast{
-  margin-top: 20px;
-  text-align: center;
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-around;
   color: #000;
 }
 
 .weather-forecast-date {
+text-align: center;
+color:#000;
 font-size: 16px;
-opacity: 0.5;
+line-height: 20px;
+margin-bottom: 10px;
 }
 
 .weather-forecast-temperatures{
-  font: 13px;
+  text-align: center;
+  color:#000;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
 }
 
+.weather-forecast-icon{
+  width: 24px;
+  text-align: center;
+}
 .weather-forecast-min {
   opacity: 0.5;
 }
