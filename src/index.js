@@ -76,6 +76,13 @@ function formatDate(date) {
   return fullDate;
 }
 
+function getForecast(city) {
+let apiKey = "e0e116f3440f7e76eb34tfo465e544a7";
+let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+console.log(apiURL);
+axios.get(apiURL).then(displayForecast);
+}
+
 
 function displayForecast() {
 
@@ -106,6 +113,6 @@ function displayForecast() {
 let getCity = document.querySelector("#search-form");
 getCity.addEventListener("submit", pullAPI);
 
-
+getForecast("Paris");
 
 displayForecast();
