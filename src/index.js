@@ -31,7 +31,7 @@ function updateTEMP(response) {
   let wind = document.querySelector("#wind");
   wind.innerHTML = `${newWind} km/h`;
 
-
+getForecast(response.data.city);
 }
 
 
@@ -44,6 +44,7 @@ function pullAPI(event){
   let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   console.log(apiURL);
   axios.get(apiURL).then(updateTEMP);
+
 }
 
 function formatDate(date) {
@@ -77,20 +78,23 @@ function formatDate(date) {
 }
 
 function getForecast(city) {
-let apiKey = "e0e116f3440f7e76eb34tfo465e544a7";
-let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+   let apiKey = "e0e116f3440f7e76eb34tfo465e544a7";
+let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
 console.log(apiURL);
 axios.get(apiURL).then(displayForecast);
 }
 
 
-function displayForecast() {
+function displayForecast(response) {
+console.log(response);
 
   let forecastElement = document.querySelector("#forecast");
 
   let days = ['Mon','Tue','Wed','Thu','Fri'];
   let forecastHtml = "";
 
+
+  
   days.forEach(function(day) {
     forecastHtml = 
     forecastHtml + `
@@ -113,6 +117,6 @@ function displayForecast() {
 let getCity = document.querySelector("#search-form");
 getCity.addEventListener("submit", pullAPI);
 
-getForecast("Paris");
+//getForecast("Paris");
 
-displayForecast();
+//displayForecast();
