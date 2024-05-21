@@ -123,9 +123,7 @@ console.log(response);
   forecastElement.innerHTML=forecastHtml;
 }
 
+
 let getCity = document.querySelector("#search-form");
 getCity.addEventListener("submit", pullAPI);
 
-//getForecast("Paris");
-
-//displayForecast();
