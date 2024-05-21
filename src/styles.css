@@ -56,16 +56,19 @@ main {
   justify-content: space-between;
 }
 
+
 .weather-forecast{
   display: flex;
-  margin-top: 30px;
+  margin-top: 40px;
   justify-content: space-around;
   color: #000;
+  background-color: rgb(229, 224, 224);
+  padding: 10px 10px;
 }
 
 .weather-forecast-date {
 text-align: center;
-color:#000;
+color:#0a0657;
 font-size: 16px;
 line-height: 20px;
 margin-bottom: 10px;
@@ -85,13 +88,16 @@ margin-bottom: 10px;
   display: block;
   margin 0 auto;
 }
-.weather-forecast-min {
+#MinTemp {
   opacity: 0.5;
 }
 
+#MaxTemp {
+  color:rgb(239, 18, 62)
+}
 
 #humidity, #wind {
-  color: red;
+  color: rgb(125, 9, 9);
 
 }
 
@@ -108,10 +114,7 @@ margin-bottom: 10px;
   line-height: 24px;
 }
 
-.current-date {
-  color:crimson;
-  font-weight: bolder;
-}
+
 .current-temperature-icon {
   position: relative;
   width: 10px;
