@@ -16,7 +16,12 @@ function updateTEMP(response) {
   newIcon.innerHTML=`<img src="${response.data.condition.icon_url}"  class="current-temperature">`;
   
     let newHumidity = response.data.temperature.humidity;
+    let humidity = document.querySelector("#humidity");
+    humidity.innerHTML = `Humidity: ${newHumidity}%`;
+
   let newWind = response.data.wind.speed;
+  let wind = document.querySelector("#wind");
+  wind.innerHTML = `Wind: ${newWind} km/h`;
 
   let tempValue = document.querySelector("#current-temperature-value");
   let convertedTemp = (temperature * 9) / 5 + 32
@@ -25,11 +30,9 @@ function updateTEMP(response) {
   let Condition = document.querySelector("#condition");
   Condition.innerHTML = newCondition;
 
-  let humidity = document.querySelector("#humidity");
-  humidity.innerHTML = `${newHumidity}%`;
 
-  let wind = document.querySelector("#wind");
-  wind.innerHTML = `${newWind} km/h`;
+
+
 
 getForecast(response.data.city);
 }
