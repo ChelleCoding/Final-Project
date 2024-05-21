@@ -4,7 +4,8 @@ body {
 }
 
 a {
-  color: #885df1;
+  color: rgb(1, 1, 61);
+  text-decoration: none;
 }
 
 .weather-app {
@@ -17,7 +18,6 @@ a {
 }
 
 header {
-  border-bottom: 1px solid #f9f7fe;
   padding-bottom: 30px;
 }
 
