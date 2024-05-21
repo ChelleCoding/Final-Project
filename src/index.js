@@ -37,12 +37,11 @@ getForecast(response.data.city);
 
 function pullAPI(event){
   event.preventDefault();
-  //console.log(event);
   let searchInputElement = document.querySelector("#search-input");
   let city = searchInputElement.value;  
   let apiKey = "e0e116f3440f7e76eb34tfo465e544a7";
   let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-  console.log(apiURL);
+  //console.log(apiURL);
   axios.get(apiURL).then(updateTEMP);
 
 }
@@ -59,7 +58,7 @@ function formatDate(date) {
 
   if (hours < 10) {
     hours = `0${hours}`;
-    console.log(hours);
+    //console.log(hours);
   }
 
   let days = [
@@ -87,13 +86,13 @@ function formatDay(timestamp) {
 function getForecast(city) {
    let apiKey = "e0e116f3440f7e76eb34tfo465e544a7";
 let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
-console.log(apiURL);
+//console.log(apiURL);
 axios.get(apiURL).then(displayForecast);
 }
 
 
 function displayForecast(response) {
-console.log(response);
+//console.log(response);
 
   let forecastElement = document.querySelector("#forecast");
 
@@ -102,7 +101,7 @@ console.log(response);
 
 
   response.data.daily.forEach(function(day, index){
-    console.log(index);
+    //console.log(index);
     if (index >0 && index < 6)
     forecastHtml = 
     forecastHtml + `

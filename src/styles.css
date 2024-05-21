@@ -62,7 +62,6 @@ main {
   margin-top: 40px;
   justify-content: space-around;
   color: #000;
-  background-color: rgb(229, 224, 224);
   padding: 10px 10px;
 }
 
@@ -80,6 +79,10 @@ margin-bottom: 10px;
   margin-top: 10px;
   display: flex;
   justify-content: center;
+}
+
+.weather-forecast-temperature{
+  padding: 0 10px;
 }
 
 .weather-forecast-icon{
@@ -108,6 +111,7 @@ margin-bottom: 10px;
   margin: 0;
 }
 .current-details {
+  display: block;
   color: rgba(39, 33, 66, 0.4);
   font-size: 16px;
   font-weight: 400;
@@ -122,7 +126,7 @@ margin-bottom: 10px;
 }
 
 .current-temperature-value {
-  font-size: 60px;
+  font-size: 40px;
   font-weight: bold;
 }
 
@@ -133,9 +137,7 @@ margin-bottom: 10px;
 }
 
 footer {
-  border-top: 1px solid #f9f7fe;
   text-align: center;
-  padding-top: 15px;
-
+  padding-top: 2px;
   color: rgba(39, 33, 66, 0.4);
 }
